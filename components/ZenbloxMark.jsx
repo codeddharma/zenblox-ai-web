@@ -1,7 +1,10 @@
 import Image from 'next/image';
 
 export default function ZenbloxMark({ size = 18, variant = 'dark', style }) {
-  const src = variant === 'cream' ? '/assets/zenblox-logo-cream.png' : '/assets/zenblox-logo.png';
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const logoPath = variant === 'cream' ? '/assets/zenblox-logo-cream.png' : '/assets/zenblox-logo.png';
+  const src = `${basePath}${logoPath}`;
+
   return (
     <Image
       src={src}

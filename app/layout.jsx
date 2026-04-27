@@ -1,6 +1,8 @@
 import { Inter, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
@@ -21,10 +23,10 @@ export const metadata = {
     'Zenblox builds custom, frontier-level AI agents for Indian enterprises to automate complex workflows and unify internal knowledge.',
   icons: {
     icon: [
-      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
+      { url: `${basePath}/favicon.png`, sizes: '32x32', type: 'image/png' },
+      { url: `${basePath}/icon.png`, sizes: '512x512', type: 'image/png' },
     ],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    apple: [{ url: `${basePath}/apple-touch-icon.png`, sizes: '180x180', type: 'image/png' }],
   },
 };
 
